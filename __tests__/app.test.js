@@ -9,4 +9,12 @@ describe('app routes', () => {
     expect(res.text).toEqual('hi');
   });
 
+  it('should post status code 200 and plain text with the request body', async() => {
+    const res = await request(app)
+      .post('/echo')
+      .send('hi');
+
+    expect(res.text).toEqual('hi');
+  });
+
 });
